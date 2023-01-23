@@ -35,6 +35,20 @@ public class AlgoritmosOrdenacao {
         }
     }
 
+    public static void insertion_sort(List<Integer> lista) {
+        int n = lista.size();
+        for (int i = 1; i < n; i++) {
+            int num = lista.get(i);
+            int j = i - 1;
+            while (j >= 0 && lista.get(j) > num) {
+                lista.set(j + 1, lista.get(j));
+                j--;
+            }
+            lista.set(j + 1, num);
+        }
+
+    }
+
     public static void main(String[] args) {
         List<Integer> lista = Arrays.asList(4, 124, 2, 5, 6, 23, 8, 34);
         System.out.println("---SELECTION SORT---");
@@ -47,6 +61,13 @@ public class AlgoritmosOrdenacao {
         System.out.println("---BUBBLE SORT---");
         System.out.println(lista.toString());
         bubble_sort(lista);
+        System.out.println(lista.toString());
+        System.out.println("--------------------");
+
+        lista = Arrays.asList(4, 124, 2, 5, 6, 23, 8, 34);
+        System.out.println("---INSERTION SORT---");
+        System.out.println(lista.toString());
+        insertion_sort(lista);
         System.out.println(lista.toString());
         System.out.println("--------------------");
 
